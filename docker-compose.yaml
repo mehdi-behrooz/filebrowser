@@ -1,0 +1,13 @@
+services:
+  test-filebrowser:
+    build: .
+    container_name: test-filebrowser
+    volumes:
+      - ./srv/:/srv/
+    environment:
+      - USERNAME=${DEV_USERNAME}
+      - PASSWORD=${DEV_PASSWORD}
+      - RECAPTCHA_KEY=${DEV_RECAPTCHA_KEY}
+      - RECAPTCHA_SECRET=${DEV_RECAPTCHA_SECRET}
+    ports:
+      - 8080:8080
